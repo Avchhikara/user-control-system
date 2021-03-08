@@ -11,6 +11,7 @@ export default async function login(req, res) {
     await vehicle.save();
     res.status(200).json({ message: "added sucessfully" });
   } catch (err) {
+    console.log(err);
     res.status(400).json({ message: "Already present" });
   }
 }
