@@ -5,10 +5,10 @@ export default async function getVehicleLogsAPI(req, res) {
   const rawData = await vehicleSearchLog.find({
     possibleRegistrationNumber: registrationNumber,
   });
-  const logs = rawData.map((log) => ({
+  let logs = rawData.map((log) => ({
     timestamp: log._id.getTimestamp(),
   }));
   logs.sort((a, b) => b.timestamp - a.timestamp);
-  if (logs.length) logs.length = 10;
+  if (logs.length) logs = logs.slice(0, 10 >= logs.length ? 10 : logs.length);
   res.status(200).json(logs);
 }
