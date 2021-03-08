@@ -53,7 +53,7 @@ class Signup extends Component {
                   type="name"
                   name="name"
                   id="name"
-                  className="ml-10"
+                  className="ml-10 border-2 rounded"
                   placeholder="your name"
                 />
               </div>
@@ -63,7 +63,7 @@ class Signup extends Component {
                   type="email"
                   name="email"
                   id="email"
-                  className="ml-10"
+                  className="ml-10 border-2 rounded"
                   placeholder="your email"
                 />
               </div>
@@ -73,7 +73,7 @@ class Signup extends Component {
                   type="password"
                   name="password"
                   id="password"
-                  className="ml-4  rounded"
+                  className="ml-4 border-2 rounded"
                   placeholder="password"
                 />
               </div>

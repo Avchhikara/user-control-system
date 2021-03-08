@@ -48,7 +48,12 @@ class Login extends Component {
             <form method="post" onSubmit={this.onLogin}>
               <div className="flex flex-row justify-around">
                 <label htmlFor="email">Email</label>
-                <input type="email" name="email" id="email" className="ml-10" />
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="ml-10 border-2 rounded"
+                />
               </div>
               <div className="flex flex-row justify-around pt-2">
                 <label htmlFor="password">Password</label>
@@ -56,7 +61,7 @@ class Login extends Component {
                   type="password"
                   name="password"
                   id="password"
-                  className="ml-4"
+                  className="ml-4 border-2 rounded"
                 />
               </div>
               <div className="flex flex-row justify-around pt-6">
