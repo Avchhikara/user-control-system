@@ -9,6 +9,6 @@ export default async function getVehicleLogsAPI(req, res) {
     timestamp: log._id.getTimestamp(),
   }));
   logs.sort((a, b) => b.timestamp - a.timestamp);
-  if (logs.length) logs = logs.slice(0, 10 >= logs.length ? 10 : logs.length);
+  if (logs.length) logs = logs.slice(0, 10);
   res.status(200).json(logs);
 }
