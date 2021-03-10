@@ -18,6 +18,11 @@ export default class Vehicles extends Component {
   };
 
   getVehicles = async () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      vehicles: [],
+      isLoading: true,
+    }));
     const resp = await fetch("/api/getVehicles", {
       method: "POST",
       body: JSON.stringify({
@@ -36,14 +41,29 @@ export default class Vehicles extends Component {
     }));
   };
 
+  deleteVehicle = async (registrationNumber) => {
+    const resp = await fetch("/api/deleteVehicle", {
+      method: "POST",
+      body: JSON.stringify({
+        userId: this.props.userId,
+        registrationNumber,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    await resp.json();
+    await this.getVehicles();
+  };
+
   onVehicleAdd = async (e) => {
     e.preventDefault();
     // console.log("On click");
-    this.setState((prevState) => ({
-      ...prevState,
-      vehicles: [],
-      isLoading: true,
-    }));
+    // this.setState((prevState) => ({
+    //   ...prevState,
+    //   vehicles: [],
+    //   isLoading: true,
+    // }));
     const registrationNumberr = e.target.querySelector("#regNo").value;
     const resp = await fetch("/api/addVehicle", {
       method: "POST",
@@ -83,6 +103,7 @@ export default class Vehicles extends Component {
             showActivity={this.props.showActivity}
             key={vehicle.registrationNumber + index}
             closeActivity={this.props.closeActivity}
+            deleteVehicle={this.deleteVehicle}
           />
         ))}
         <AddVehicle addVehicle={this.onVehicleAdd} />
