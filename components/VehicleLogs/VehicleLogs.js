@@ -26,7 +26,7 @@ export default class VehicleLogs extends Component {
       activity: data,
       isLoading: false,
     });
-    console.log(data);
+    // console.log(data);
   };
 
   render() {

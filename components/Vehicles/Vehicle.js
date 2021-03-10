@@ -28,7 +28,9 @@ export default function Vehicle(props) {
           delete
         </button>
         <button
-          className="rounded border-blue-400 bg-blue-600 text-white px-1"
+          className={`rounded border-blue-400 ${
+            isOpen ? "bg-yellow-500" : "bg-blue-600"
+          } text-white px-1`}
           onClick={() => {
             if (isOpen) closeActivity();
             if (!isOpen) showActivity(registrationNumber);
