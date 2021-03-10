@@ -22,7 +22,7 @@ export default function Home() {
           </div>
           <p>,you can can rest assured for the next entry</p>
           <ul className="mt-4">
-            Here you can:
+            In it, you can:
             <li className="mt-3">
               ▶️ add a new vehicle just by adding it's registration number
             </li>
@@ -31,8 +31,8 @@ export default function Home() {
           <hr className="mt-4" />
           <p className="mt-8">
             It's a new, fast and effecient way of handling all this.
-            <br /> It reduces the need of human interaction and automote the
-            most parts of entry process.
+            <br /> It reduces the need of human interaction and autamote
+            most parts of the entry process.
           </p>
         </div>
         <div className="">
